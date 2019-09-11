@@ -21,23 +21,23 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
                         <label for="Email">Email</label>
-                        <input type="email" name="email" id="Email" class="form-control" placeholder="Email">
+                        <input type="email" name="email" id="Email" class="form-control" placeholder="Email" value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
                         <label for="Phone">Phone No</label>
-                        <input type="number" name="phone" id="Phone" class="form-control" placeholder="Phone Number">
+                        <input type="number" name="phone" id="Phone" class="form-control" placeholder="Phone Number" value="{{ old('phone') }}">
                     </div>
                     <div class="form-group">
                         <label for="pass">Password</label>
-                        <input type="password" name="pass" id="pass" class="form-control" placeholder="Password">
+                        <input type="password" name="pass" id="pass" class="form-control" placeholder="Password" value="{{ old('pass') }}">
                     </div>
                     <div class="form-group">
                         <label for="confpass">Confirm Password</label>
-                        <input type="password" name="confpass" id="confpass" class="form-control" placeholder="Confirm Password">
+                        <input type="password" name="confpass" id="confpass" class="form-control" placeholder="Confirm Password" value="{{ old('confpass') }}">
                     </div>
                     <div class="row pr-3 justify-content-end">
                         <input type="submit" class="btn btn-outline-dark">

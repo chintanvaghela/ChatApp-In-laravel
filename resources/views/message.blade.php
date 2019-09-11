@@ -13,11 +13,10 @@
           <div class="inbox_chat">
             <div class="chat_list" v-for="user in users" v-if="user.id != me">
             <div class="chat_people" @click="you=user.id;loadmessages()">
-                <div class="chat_img"> <img src="" alt="sunil"> </div>
+                <div class="chat_img"> <img src=""> </div>
                 <div class="chat_ib">
                 <h5>@{{user.name}}<span class="chat_date">Dec 25</span></h5>
-                  <p>Test, which is a new approach to have all solutions
-                    astrology under one roof.</p>
+                  <p>Description</p>
                 </div>
               </div>
             </div>
@@ -27,7 +26,7 @@
           <div class="msg_history">
           <div  v-for="message in messages">
             <div class="incoming_msg" v-if="message.sender_id == you">
-              <div class="incoming_msg_img"> <img src="" alt="sunil"></div>
+              <div class="incoming_msg_img"> <img src=""></div>
               <div class="received_msg">
                 <div class="received_withd_msg">
                   <div><p>@{{ message.message }}</p>

@@ -24,11 +24,11 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="Email1" class="form-control" placeholder="Email">
+                            <input type="email" name="email" id="Email1" class="form-control" placeholder="Email" value="{{ old('email') }}">
                         </div>
                         <div class="form-group">
                             <label for="pass">Password</label>
-                            <input type="password" name="password" id="pass" class="form-control" placeholder="Password">
+                            <input type="password" name="password" id="pass" class="form-control" placeholder="Password" value="{{ old('password') }}">
                         </div>
                         <div class="row pr-3 justify-content-end">
                             <input type="submit"  value="Login" class="btn btn-outline-dark">

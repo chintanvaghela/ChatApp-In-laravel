@@ -33,8 +33,8 @@ const app = new Vue({
         users: [],
         messages: [],
         message: "",
-        me: 1,
-        you: 7
+        me: 0,
+        you: 0
     },
     mounted() {
         this.loadmessages();

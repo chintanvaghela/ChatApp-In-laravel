@@ -30,7 +30,7 @@ class RegisterController extends Controller
         $rules=array(
             'name'=>'required',
             'email'=>'required|email',
-            'phone'=>'required|size:10|numeric',
+            'phone'=>'required|numeric|digits:10',
             'pass'=>'required|min:6',
             'confpass'=>'required|same:pass'
         );
