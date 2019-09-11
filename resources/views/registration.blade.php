@@ -3,6 +3,13 @@
 @section('content')
 
 <div class="container justify-content-center" id="margin">
+    <div class="row">
+                <div class="col">
+                @foreach($errors->all() as $error)
+                        {{$error}}<br>
+                @endforeach
+                </div>
+            </div>
         <div class="d-flex justify-content-center">
             <div class="page-header">
                 <h1>Registration Form </h1>
@@ -10,11 +17,6 @@
         </div>
         <div class="row pt-3 pl-3">
             <div class="col-lg-12">
-            <h1>
-                @if(session('msg')!='null')
-                    {{session('msg')}}
-                @endif
-            </h1>
                 <form action="\register" method="post">
                     {{csrf_field()}}
                     <div class="form-group">

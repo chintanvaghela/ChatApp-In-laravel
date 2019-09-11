@@ -17,7 +17,7 @@ class RegisterController extends Controller
     public function login(Request $request)
     {
         $response=User::login($request);
-        if($response==1){return redirect()->route('home')->with('users',$users=User::all());}
+        if($response==1){return redirect()->route('home');}
         if($response==0){return redirect('login');}
     }
     public function logout()
@@ -27,7 +27,26 @@ class RegisterController extends Controller
     }
     public function store(Request $request)
     {
-        $response=User::insert($request);//calling the method(insert) of model user
-        if($response==1){return redirect('login')->with(['msg'=>'Registered Successfully You can Login Now']);}//if validations are true
+        $rules=array(
+            'name'=>'required',
+            'email'=>'required|email',
+            'phone'=>'required|size:10|numeric',
+            'pass'=>'required|min:6',
+            'confpass'=>'required|same:pass'
+        );
+        $message=array(
+            'name.required'=>'Name Shoud not be Empty',
+            'email.required'=>'Email Should not be Emoty',
+            'phone.required'=>'Phone Should not be Emoty',
+            'pass.required'=>'Password Should not be Emoty',
+            'confpass.required'=>'Confirm Password Should not be Emoty',
+            'email.email'=>'Email Formate Incurrect',
+            'phone.size'=>'Phone number must be 10 digit',
+            'conf.same'=>'Confirm Password is not matching with Password',
+            'pass.min'=>'Password lenght atleast 6 character'
+        );
+        $this->validate($request,$rules,$message);
+        User::insert($request);//calling the method(insert) of model user
+        return redirect('login');//if validations are true
     }
 }

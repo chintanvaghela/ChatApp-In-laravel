@@ -35,7 +35,7 @@ Route::post('register','RegisterController@store');
 
 Route::middleware('auth:web')->group(function () {
 
-        Route::get('/send', function () {
+        Route::get('/chat', function () {
             return view('message');
         });
 

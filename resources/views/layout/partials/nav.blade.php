@@ -11,7 +11,7 @@
                         <li class="nav-item"><a href="/contact" class="nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a></li>
 
                         @if(Auth::user())
-
+                        <li class="nav-item"><a href="/chat" class="nav-link {{ Request::is('chat') ? 'active' : '' }}">Chat</a></li>
                         <li class="nav-item"><a href="/logout" class="nav-link {{ Request::is('logout') ? 'active' : '' }}">Logout</a></li>
 
                         @else

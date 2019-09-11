@@ -4,16 +4,13 @@
 <div class="container" style="margin-top:10%;">
             <div class="row">
                 <div class="col">
-                    <h1>
                 @if($errors->has('email'))
                     {{$errors->first('email')}}
                 @endif
-            </h1>
-            <h1>
+                <br>
                 @if($errors->has('password'))
                     {{$errors->first('password')}}
                 @endif
-            </h1>
                 <div class="d-flex justify-content-center">
                     <div class="page-header">
                         <h1>Login Form </h1>
