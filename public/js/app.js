@@ -59348,13 +59348,15 @@ var app = new Vue({
 
       this.messages = []; // Make a request for a user with a given ID
 
-      axios.get("/api/users/".concat(this.me, "/").concat(this.you)).then(function (response) {
-        _this3.messages = response.data;
-      })["catch"](function (error) {
-        // handle error
-        console.log(error);
-      })["finally"](function () {// always executed
-      });
+      if (!(this.me == 0 && this.you == 0)) {
+        axios.get("/api/users/".concat(this.me, "/").concat(this.you)).then(function (response) {
+          _this3.messages = response.data;
+        })["catch"](function (error) {
+          // handle error
+          console.log(error);
+        })["finally"](function () {// always executed
+        });
+      }
     }
   }
 });

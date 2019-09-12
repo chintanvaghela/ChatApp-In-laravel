@@ -77,6 +77,7 @@ const app = new Vue({
         loadmessages() {
             this.messages=[];
             // Make a request for a user with a given ID
+            if(!(this.me == 0 && this.you == 0)){
             axios.get(`/api/users/${this.me}/${this.you}`)
                 .then(response => {
                     this.messages = response.data;
@@ -89,6 +90,7 @@ const app = new Vue({
                     // always executed
                 });
         }
+    }
     }
 });
 
